@@ -1,9 +1,8 @@
-using System;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 using NUnit.Framework;
 using VerticalFlight.Core.Data.NHibernate;
-using VerticalFlight.Core.Services;
+using VerticalFlight.Core.Services.Configuration;
 
 namespace Integration
 {

@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace VerticalFlight.Core.Services
+namespace VerticalFlight.Core.Services.Configuration
 {
     public class WebConfigurationService : ConfigurationService
     {

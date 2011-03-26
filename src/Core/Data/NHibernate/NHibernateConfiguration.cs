@@ -4,7 +4,7 @@ using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions.Helpers;
 using NHibernate;
 using NHibernate.Cfg;
-using VerticalFlight.Core.Services;
+using VerticalFlight.Core.Services.Configuration;
 
 namespace VerticalFlight.Core.Data.NHibernate
 {

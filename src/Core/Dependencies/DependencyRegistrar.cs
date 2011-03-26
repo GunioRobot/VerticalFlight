@@ -5,6 +5,7 @@ using StructureMap.Configuration.DSL;
 using VerticalFlight.Core.Data;
 using VerticalFlight.Core.Data.NHibernate;
 using VerticalFlight.Core.Services;
+using VerticalFlight.Core.Services.Configuration;
 
 namespace VerticalFlight.Core.Dependencies
 {
