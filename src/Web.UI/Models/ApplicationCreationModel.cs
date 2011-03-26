@@ -41,25 +41,60 @@ namespace Web.UI.Models
         public string ApplicationInformationMobilePhone { get; set; }
 
         /* Employment Info */
+        [DisplayName("Current Employer")]
         public string EmploymentInfoCurrentEmployer { get; set; }
+        
+        [DisplayName("Address")]
         public string EmploymentInfoEmployerAddress { get; set; }
+        
+        [DisplayName("Phone")]
         public string EmploymentInfoPhone { get; set; }
+        
+        [DisplayName("Fax")]
         public string EmploymentInfoFax { get; set; }
+        
+        [DisplayName("Email")]
         public string EmploymentInfoEmail { get; set; }
+        
+        [DisplayName("Title")]
         public string EmploymentInfoCurrentPositionTitle { get; set; }
-        public string EmploymentInfoCurrentEmployerFrom { get; set; }
-        public string EmploymentInfoCurrentEmployerTo { get; set; }
+        
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoEmploymentDates { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoManagerName { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoManagerPhone { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoCurrentReasonForLeaving { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoCurrentSalary { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoCurrentJobDuties { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoPriorEmployer { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoPriorSalary { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoPriorJobDuties { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoPriorPositionTitle { get; set; }
+        
+        [DisplayName("Applicant Name")]
         public string EmploymentInfoPriorReasonForLeaving { get; set; }
+
+        [DisplayName("Applicant Name")]
+        public string EmploymentInfoPriorEmploymentDates { get; set; }
 
         public IList<FlightExperience> FlightExperience { get; set; }
 
