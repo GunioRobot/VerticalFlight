@@ -3,6 +3,7 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Conventions.Helpers;
 using NHibernate;
+using NHibernate.Cfg;
 using VerticalFlight.Core.Services;
 
 namespace VerticalFlight.Core.Data.NHibernate
@@ -26,12 +27,15 @@ namespace VerticalFlight.Core.Data.NHibernate
                     m.AutoMappings.Add(
                     AutoMap.AssemblyOf<NHibernateRepository>(new MyAutoConfig())
                     .Conventions.Add(
-                        Table.Is(x => Inflector.Net.Inflector.Pluralize(x.EntityType.Name)),
+                        Table.Is(x => x.EntityType.Name),
                         PrimaryKey.Name.Is(x => x.EntityType.Name + "ID"),
                         ForeignKey.EndsWith("ID")
                     )))
+                    .ExposeConfiguration(cfg=> Configuration = cfg)
                 .BuildSessionFactory();
         }
+
+        public Configuration Configuration { get; set; }
 
         public class MyAutoConfig : DefaultAutomappingConfiguration
         {

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.UI", "Web.UI\Web.UI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{D7228C73-AE50-494B-82A7-F8C558C3CDCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration", "Integration\Integration.csproj", "{C745247C-3F2B-4842-B2D2-A7A4AB4CEAA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{D7228C73-AE50-494B-82A7-F8C558C3CDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7228C73-AE50-494B-82A7-F8C558C3CDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7228C73-AE50-494B-82A7-F8C558C3CDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C745247C-3F2B-4842-B2D2-A7A4AB4CEAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C745247C-3F2B-4842-B2D2-A7A4AB4CEAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C745247C-3F2B-4842-B2D2-A7A4AB4CEAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C745247C-3F2B-4842-B2D2-A7A4AB4CEAA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

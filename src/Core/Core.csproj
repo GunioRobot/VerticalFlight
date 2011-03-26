@@ -50,15 +50,21 @@
       <HintPath>..\..\lib\structuremap\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\NHibernate\NHibernateConfiguration.cs" />
     <Compile Include="Data\NHibernate\NHibernateRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Dependencies\DependencyRegistrar.cs" />
-    <Compile Include="Domain\Heartbeat.cs" />
+    <Compile Include="Domain\Application.cs" />
+    <Compile Include="Domain\ApplicationInformation.cs" />
+    <Compile Include="Domain\EmploymentInfo.cs" />
+    <Compile Include="Domain\FlightExperience.cs" />
+    <Compile Include="Domain\ScholarshipInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConfigurationService.cs" />
     <Compile Include="Services\WebConfigurationService.cs" />
