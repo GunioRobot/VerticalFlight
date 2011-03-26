@@ -15,5 +15,6 @@ namespace VerticalFlight.Core.Domain
         public virtual IList<AirmanCertificate> AirmanCertificates { get; set; }
         public virtual IList<ProfessionalReference> ProfessionalReferences { get; set; }
         public virtual DateTime ApplicationDate { get; set; }
+        public virtual PaymentHistory Payment { get; set; }
     }
 } 
