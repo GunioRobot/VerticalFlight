@@ -60,10 +60,16 @@
     <Compile Include="Data\NHibernate\NHibernateRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Dependencies\DependencyRegistrar.cs" />
+    <Compile Include="Domain\AircraftSeriesInfo.cs" />
+    <Compile Include="Domain\AirmanCertificate.cs" />
     <Compile Include="Domain\Application.cs" />
     <Compile Include="Domain\ApplicationInformation.cs" />
+    <Compile Include="Domain\EducationTraining.cs" />
     <Compile Include="Domain\EmploymentInfo.cs" />
+    <Compile Include="Domain\FinancialInformation.cs" />
     <Compile Include="Domain\FlightExperience.cs" />
+    <Compile Include="Domain\OtherInformation.cs" />
+    <Compile Include="Domain\ProfessionalReference.cs" />
     <Compile Include="Domain\ScholarshipInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Configuration\ConfigurationService.cs" />

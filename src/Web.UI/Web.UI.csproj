@@ -72,6 +72,10 @@
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ui_helper.js" />
+
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
