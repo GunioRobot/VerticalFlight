@@ -69,14 +69,16 @@
     <Compile Include="Domain\FinancialInformation.cs" />
     <Compile Include="Domain\FlightExperience.cs" />
     <Compile Include="Domain\OtherInformation.cs" />
+    <Compile Include="Domain\PaymentHistory.cs" />
     <Compile Include="Domain\ProfessionalReference.cs" />
     <Compile Include="Domain\ScholarshipInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Configuration\ConfigurationService.cs" />
     <Compile Include="Services\Configuration\WebConfigurationService.cs" />
+    <Compile Include="Services\FileUploader\FileUpload.cs" />
+    <Compile Include="Services\FileUploader\FileUploaderService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\FileUploader\" />
     <Folder Include="Services\Payment\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
