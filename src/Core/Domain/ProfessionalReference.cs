@@ -7,7 +7,7 @@ namespace VerticalFlight.Core.Domain
 {
     public class ProfessionalReference
     {
-        public virtual int ProfessionalReferencesID { get; set; }
+        public virtual int ProfessionalReferenceID { get; set; }
         public virtual int ApplicationID { get; set; }
         public virtual string Name { get; set; }
         public virtual string Title { get; set; }
