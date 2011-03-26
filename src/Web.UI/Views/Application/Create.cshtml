@@ -6,254 +6,292 @@
 
 <h2>Create</h2>
 
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script> 
+
 @using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
     <fieldset>
-        <legend>ApplicationCreationModel</legend>
+        <div id="tabs"> 
+	        <ul> 
+		        <li><a href="#applInfo">Applicant</a></li> 
+		        <li><a href="#empInfo">Employment</a></li> 
+		        <li><a href="#eduTrain">Education</a></li> 
+                <li><a href="#airCert">Airman Certificates</a></li> 
+                <li><a href="#airMakeModel">Aircrafts</a></li> 
+                <li><a href="#medCert">Medical</a></li> 
+                <li><a href="#flightExp">Experience</a></li> 
+                <li><a href="#otherInfo">Other</a></li> 
+                <li><a href="#finInfo">Financial</a></li> 
+                <li><a href="#refs">References</a></li> 
+                <li><a href="#finPay">Finish</a></li> 
+	        </ul> 
+	        <div id="applInfo"> 
+		        @Html.ValidationSummary(true)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ScholarshipID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ScholarshipID)
-            @Html.ValidationMessageFor(model => model.ScholarshipID)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationApplicantName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationApplicantName)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationApplicantName)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserID)
-            @Html.ValidationMessageFor(model => model.UserID)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationDOB)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationDOB)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationDOB)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationApplicantName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationApplicantName)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationApplicantName)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationCitizenship)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationCitizenship)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationCitizenship)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationDOB)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationDOB)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationDOB)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationAddress)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationAddress)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationAddress)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationCitizenship)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationCitizenship)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationCitizenship)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationCity)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationCity)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationCity)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationAddress)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationAddress)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationAddress)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationState)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationState)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationState)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationCity)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationCity)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationCity)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationZip)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationZip)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationZip)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationState)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationState)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationState)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationHomePhone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationHomePhone)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationHomePhone)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationZip)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationZip)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationZip)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ApplicationInformationMobilePhone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ApplicationInformationMobilePhone)
+                    @Html.ValidationMessageFor(model => model.ApplicationInformationMobilePhone)
+                </div>
+                <div style="width:100%;text-align:right;padding:10px;">
+                    <input type="button" onclick="$('#tabs').tabs('option', 'selected', '1');" value="Next" />
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationHomePhone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationHomePhone)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationHomePhone)
-        </div>
+	        </div> 
+	        <div id="empInfo"> 
+		        @Html.ValidationSummary(true)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ApplicationInformationMobilePhone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ApplicationInformationMobilePhone)
-            @Html.ValidationMessageFor(model => model.ApplicationInformationMobilePhone)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentEmployer)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentEmployer)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentEmployer)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentEmployer)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentEmployer)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentEmployer)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoEmployerAddress)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoEmployerAddress)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoEmployerAddress)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoEmployerAddress)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoEmployerAddress)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoEmployerAddress)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoPhone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoPhone)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoPhone)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoPhone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoPhone)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoPhone)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoFax)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoFax)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoFax)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoFax)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoFax)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoFax)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoEmail)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoEmail)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoEmail)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoEmail)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoEmail)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoEmail)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentPositionTitle)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentPositionTitle)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentPositionTitle)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentPositionTitle)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentPositionTitle)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentPositionTitle)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentEmployerFrom)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentEmployerFrom)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentEmployerFrom)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentEmployerFrom)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentEmployerFrom)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentEmployerFrom)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentEmployerTo)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentEmployerTo)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentEmployerTo)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentEmployerTo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentEmployerTo)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentEmployerTo)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoEmploymentDates)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoEmploymentDates)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoEmploymentDates)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoEmploymentDates)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoEmploymentDates)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoEmploymentDates)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoManagerName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoManagerName)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoManagerName)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoManagerName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoManagerName)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoManagerName)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoManagerPhone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoManagerPhone)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoManagerPhone)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoManagerPhone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoManagerPhone)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoManagerPhone)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentReasonForLeaving)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentReasonForLeaving)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentReasonForLeaving)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentReasonForLeaving)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentReasonForLeaving)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentReasonForLeaving)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentSalary)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentSalary)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentSalary)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentSalary)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentSalary)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentSalary)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoCurrentJobDuties)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoCurrentJobDuties)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentJobDuties)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoCurrentJobDuties)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoCurrentJobDuties)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoCurrentJobDuties)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoPriorEmployer)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoPriorEmployer)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoPriorEmployer)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoPriorEmployer)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoPriorEmployer)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoPriorEmployer)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoPriorSalary)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoPriorSalary)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoPriorSalary)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoPriorSalary)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoPriorSalary)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoPriorSalary)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoPriorJobDuties)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoPriorJobDuties)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoPriorJobDuties)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoPriorJobDuties)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoPriorJobDuties)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoPriorJobDuties)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoPriorPositionTitle)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoPriorPositionTitle)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoPriorPositionTitle)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoPriorPositionTitle)
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.EmploymentInfoPriorReasonForLeaving)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.EmploymentInfoPriorReasonForLeaving)
+                    @Html.ValidationMessageFor(model => model.EmploymentInfoPriorReasonForLeaving)
+                </div>
+	        </div> 
+	        <div id="eduTrain"> 
+		
+	        </div> 
+            <div id="airCert">
+    
+            </div>
+            <div id="airMakeModel">
+    
+            </div>
+            <div id="medCert">
+    
+            </div>
+            <div id="flightExp">
+    
+            </div>
+            <div id="otherInfo">
+    
+            </div>
+            <div id="finInfo">
+    
+            </div>
+            <div id="refs">
+    
+            </div>
+            <div id="finPay">
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoPriorPositionTitle)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoPriorPositionTitle)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EmploymentInfoPriorReasonForLeaving)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.EmploymentInfoPriorReasonForLeaving)
-            @Html.ValidationMessageFor(model => model.EmploymentInfoPriorReasonForLeaving)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
     </fieldset>
 }
 
