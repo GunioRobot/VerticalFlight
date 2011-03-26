@@ -1,18 +1,18 @@
 ﻿$(document).ready(function () {
     // jquery UI helpers
-    $("input:text.date").datepicker({ showOn: "both", buttonImage: "/content/themes/base/images/calendar.png" });
-    $("input:text.ssn").mask("999-99-9999");
+    $("input:text.date").datepicker({ showOn: "both", buttonImage: "/content/images/calendar.png" });
+//    $("input:text.ssn").mask("999-99-9999");
     $("input:text.phone").mask("(999)999-9999");
     $("input:text.zip").mask("99999");
 
-    // form appearance
-    $("input").focus(function () { $(this).addClass("highlight"); });
-    $("input").blur(function () { $(this).removeClass("highlight"); });
+//    // form appearance
+//    $("input").focus(function () { $(this).addClass("highlight"); });
+//    $("input").blur(function () { $(this).removeClass("highlight"); });
 
-    $("input:submit").button();
-    $(".create-button").button({ icons: { secondary: "ui-icon-circle-plus"} });
-    $(".search-button").button({ icons: { secondary: "ui-icon-search"} });
-    $(".login-button").button({ icons: { secondary: "ui-icon-unlocked"} });
+//    $("input:submit").button();
+//    $(".create-button").button({ icons: { secondary: "ui-icon-circle-plus"} });
+//    $(".search-button").button({ icons: { secondary: "ui-icon-search"} });
+//    $(".login-button").button({ icons: { secondary: "ui-icon-unlocked"} });
 });
 
 // editable grid
@@ -31,6 +31,6 @@ function CancelEditGridItem(grid) {
 function Clearform() {
     $('#CreateRow input[type="text"]').val("");
     $('#CreateRow select').val("");
-    $("input:text.date").datepicker({ showOn: "both", buttonImage: "/content/themes/base/images/calendar.png" });
+    $("input:text.date").datepicker({ showOn: "both", buttonImage: "/content/images/calendar.png" });
 }
 

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using VerticalFlight.Core.Domain;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Web.UI.Models
 {
@@ -10,14 +12,32 @@ namespace Web.UI.Models
         public virtual int UserID { get; set; }
         
         /* Application Information */
+        [DisplayName("Applicant Name")]
+        [Required(ErrorMessage="* You must enter your name.")]
         public string ApplicationInformationApplicantName { get; set; }
-        public DateTime ApplicationInformationDOB { get; set; }
+
+        [DisplayName("Date Of Birth")]
+        public DateTime? ApplicationInformationDOB { get; set; }
+
+        [DisplayName("Citizenship")]
         public string ApplicationInformationCitizenship { get; set; }
+
+        [DisplayName("Address")]
         public string ApplicationInformationAddress { get; set; }
+
+        [DisplayName("City")]
         public string ApplicationInformationCity { get; set; }
+
+        [DisplayName("State")]
         public string ApplicationInformationState { get; set; }
+
+        [DisplayName("Zip")]
         public string ApplicationInformationZip { get; set; }
+
+        [DisplayName("Home Phone")]
         public string ApplicationInformationHomePhone { get; set; }
+
+        [DisplayName("Mobile Phone")]
         public string ApplicationInformationMobilePhone { get; set; }
 
         /* Employment Info */

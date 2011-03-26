@@ -63,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\calendar.png" />
     <Content Include="Content\images\footer.png" />
     <Content Include="Content\images\headerimg.jpg" />
     <Content Include="Content\images\page_bg.png" />
@@ -71,13 +72,11 @@
     <Content Include="Content\images\wrapper.png" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
-<<<<<<< Updated upstream
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.js" />
     <Content Include="Scripts\ui_helper.js" />
-=======
     <Content Include="Scripts\jquery.ui.core.js" />
     <Content Include="Scripts\jquery.ui.tabs.js" />
     <Content Include="Scripts\jquery.ui.widget.js" />
->>>>>>> Stashed changes
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -138,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\Money.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Application\EditorTemplates\ApplicationInput.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Application\List.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
