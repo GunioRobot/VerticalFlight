@@ -1,0 +1,42 @@
+﻿* { font-family: Tahoma, Verdana, Arial, sans-serif; font-size: 11px; line-height: 1.3em; padding: 0px; margin: 0px; }
+body { background: #dad3a0 url(images/page_bg.png) repeat-x top left; }
+fieldset { border: solid 1px #CCC; padding: 12px; }
+fieldset legend { margin: 0px 12px; padding: 4px; }
+
+#wrapper { width: 1004px; margin: auto; background-image: url(images/wrapper.png); }
+#page { width: 978px; margin: auto; }
+#header { height: 280px; background-image: url(images/headerimg.jpg); }
+#login-display { color: #FFF; float: right; padding: 12px; margin-top: 245px; font-weight: 700; font-size: 12px; }
+#login-display a { color: #FFF; }
+#menu-bar { height: 65px; background-image: url(images/t_menu_bg.png); }
+#menu { list-style-type: none; padding: 0px 10px; }
+#menu li { display: inline-block; }
+#menu li a { display: inline-block; color: #FFF; font-weight: 700; text-decoration: none; padding: 8px 10px; }
+#menu li a:hover { color: #577A0E; background-image: url(images/t_menu_hover.png); }
+#content { padding: 12px; }
+#footer { height: 30px; background-image: url(images/footer.png); text-align: center; color: #484747; font-size: 10px; }
+
+/* Form Styles
+-------------------------------------------------------*/
+label { margin: 0px 4px; vertical-align: text-bottom; }
+input { margin: 4px; }
+input[type="text"], input[type="password"] { width: 200px; }
+input[type="submit"] { padding: 4px; }
+
+.editor-field { margin-bottom: 8px; }
+/* Validation Helper Styles
+-----------------------------------------------------------*/
+.field-validation-error { color: #ff0000; margin: 4px; }
+.field-validation-valid { display: none; }
+.input-validation-error { border: 1px solid #ff0000; background-color: #ffeeee; }
+.validation-summary-errors { font-weight: bold; color: #ff0000; }
+.validation-summary-valid { display: none; }
+
+/* Login Form Styles
+-------------------------------------------------------*/
+#login-form { width: 250px; margin: 50px auto; }
+
+/* Registration Form Styles 
+-------------------------------------------------------*/
+#register-form { width: 250px; margin: 50px auto; }
+
