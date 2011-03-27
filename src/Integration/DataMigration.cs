@@ -13,7 +13,7 @@ namespace Integration
         public void SetUp()
         {
             _configurationService = new FakeConfigurationService();
-            _configurationService.ConnectionString = @"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=C:\Source\git\VerticalFlight\src\Web.UI\App_Data\VERTICALFLIGHT.MDF;User Instance=true";
+            _configurationService.ConnectionString = @"Data Source=tcp:sql2k802.discountasp.net;Initial Catalog=SQL2008_809759_ddvff;User ID=SQL2008_809759_ddvff_user;Password=jesika;";
             _dbConfiguration = new NHibernateConfiguration(_configurationService);
             _sessionFactory = _dbConfiguration.CreateSessionFactory();
             _repository = new NHibernateRepository(_sessionFactory.OpenSession());
