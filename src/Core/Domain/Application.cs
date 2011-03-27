@@ -5,6 +5,10 @@ namespace VerticalFlight.Core.Domain
 {
     public class Application
     {
+        public Application()
+        {
+            ApplicationInformation = new ApplicationInformation();
+        }
         public virtual int ApplicationID { get; set; }
         public virtual int ScholarshipID { get; set; }
         public virtual Guid UserID { get; set; }

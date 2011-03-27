@@ -1,6 +1,9 @@
 ﻿@model Web.UI.Models.ApplicationCreationModel
 @using (Html.BeginForm())
 {
+  @Html.HiddenFor(model=>model.ApplicationID)
+  @Html.HiddenFor(model=>model.UserID)
+  @Html.HiddenFor(model=>model.ScholarshipID)
     <fieldset>
         <div id="appTabs">
             <ul>
