@@ -6,9 +6,12 @@
 
 @foreach (var item in Model)
 {
+  var hasApplication = ((IList<VerticalFlight.Core.Domain.Application>)ViewBag.UserApplications).FirstOrDefault(app=>app.ScholarshipID == item.ScholarshipInfoID) != null;
   <div class="scholarship">
     <h3>@item.Name</h3>
     <div class="description">@item.Description</div>
-    <div class="apply-link">@Html.ActionLink("Apply Now", "Create", "Application", new { id=item.ScholarshipInfoID }, null)</div>
+    <div class="apply-link">
+      @Html.ActionLink(hasApplication ? "Edit Application" : "Apply Now", "Create", "Application", new { id=item.ScholarshipInfoID }, null)
+    </div>
   </div>
 }

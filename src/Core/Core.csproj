@@ -54,6 +54,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\NHibernate\NHibernateConfiguration.cs" />
@@ -73,10 +74,14 @@
     <Compile Include="Domain\ProfessionalReference.cs" />
     <Compile Include="Domain\ScholarshipInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Authentication\FormsAuthenticationService.cs" />
+    <Compile Include="Services\Authentication\IFormsAuthenticationService.cs" />
     <Compile Include="Services\Configuration\ConfigurationService.cs" />
     <Compile Include="Services\Configuration\WebConfigurationService.cs" />
     <Compile Include="Services\FileUploader\FileUploaderService.cs" />
     <Compile Include="Services\FileUploader\HttpFileUploaderService.cs" />
+    <Compile Include="Services\Membership\AccountMembershipService.cs" />
+    <Compile Include="Services\Membership\IMembershipService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\Payment\" />
