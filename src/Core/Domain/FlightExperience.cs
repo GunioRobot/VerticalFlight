@@ -6,7 +6,7 @@ namespace VerticalFlight.Core.Domain
     public class FlightExperience
     {
         public virtual int FlightExperienceID { get; set; }
-        public virtual int ApplicationID { get; set; }
+        public virtual Application Application { get; set; }
         public virtual string MakeModel { get; set; }
         public virtual string Turbine { get; set; }
         public virtual string Reciprocating { get; set; }

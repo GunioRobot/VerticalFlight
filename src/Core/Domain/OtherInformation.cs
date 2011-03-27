@@ -6,7 +6,7 @@ namespace VerticalFlight.Core.Domain
     public class OtherInformation
     {
         public virtual int OtherInformationID { get; set; }
-        public virtual int ApplicationID { get; set; }
+        public virtual Application Application { get; set; }
         public virtual string Accolades { get; set; }
         public virtual string Affiliations { get; set; }
         public virtual string ActivitiesHobbies { get; set; }
