@@ -7,70 +7,73 @@ using VerticalFlight.Core.Domain;
 using Web.UI.Models;
 using System.Collections;
 using System.Collections.Generic;
+using VerticalFlight.Core.Services.Membership;
+using AutoMapper;
 
 namespace Web.UI.Controllers
 {
     public class ApplicationController : Controller
     {
         readonly Repository _repository;
+        readonly IMembershipService _membershipService;
 
-        public ApplicationController(Repository repository)
+        public ApplicationController(Repository repository, IMembershipService membershipService)
         {
             _repository = repository;
+            _membershipService = membershipService;
         }
 
         [Authorize]
         public ActionResult Create(int id)
         {
-            ViewData["ajax"] = true;
-            return View(new ApplicationCreationModel { ScholarshipID = id });
+            var application = new Application { ScholarshipID = id, UserID = _membershipService.GetUserIdFor(User.Identity.Name), ApplicationDate = DateTime.Now };
+            _repository.Save<Application>(application);
+
+            Mapper.CreateMap<Application, ApplicationCreationModel>();
+            var appModel = Mapper.Map<Application, ApplicationCreationModel>(application);
+
+            return View(appModel);
         }
 
-        public ActionResult EditingServerSide()
+        [GridAction]
+        public ActionResult _EducationSelectAjaxEditing(int appId)
         {
-            return View("Create");
+            return View("Create", new GridModel(_repository.All<EducationTraining>().Where(et => et.ApplicationID == appId)));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EducationInsert(int id)
+        [GridAction]
+        public ActionResult _EducationInsertAjaxEditing(int appId)
         {
-            //EducationTraining education = _repository.(et => et.EducationTrainingID == educationTrainingId);
+            var inserted = new EducationTraining();
 
-            //TryUpdateModel(product);
-            //SessionProductRepository.Update(product);
-            //return View(new GridModel(SessionProductRepository.All()));
-            throw new NotImplementedException("Getting there...");
+            TryUpdateModel(inserted);
+
+            _repository.Save<EducationTraining>(inserted);
+
+            return View("Create", new GridModel(_repository.All<EducationTraining>().Where(et => et.ApplicationID == appId)));
         }
         [AcceptVerbs(HttpVerbs.Post)]
         [GridAction]
-        public ActionResult EducationUpdate(int id)
+        public ActionResult _EducationUpdateAjaxEditing(int id, int appId)
         {
-            ////Create a new instance of the EditableProduct class.
-            //EditableProduct product = new EditableProduct();
-            ////Perform model binding (fill the product properties and validate it).
-            //if (TryUpdateModel(product))
-            //{
-            //    //The model is valid - insert the product.
-            //    SessionProductRepository.Insert(product);
-            //}
-            ////Rebind the grid
-            //return View(new GridModel(SessionProductRepository.All()));
-            throw new NotImplementedException("Getting there...");
-        }
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult EducationDelete(int id)
-        {
-            ////Find a customer with ProductID equal to the id action parameter
-            //EditableProduct product = SessionProductRepository.One(p => p.ProductID == id);
-            //if (product != null)
-            //{
-            //    //Delete the record
-            //    SessionProductRepository.Delete(product);
-            //}
+            var updated = _repository.All<EducationTraining>().Where<EducationTraining>(et => et.EducationTrainingID == id).FirstOrDefault<EducationTraining>();
 
-            ////Rebind the grid
-            //return View(new GridModel(SessionProductRepository.All()));
-            throw new NotImplementedException("Getting there...");
+            TryUpdateModel(updated);
+
+            _repository.Save<EducationTraining>(updated);
+
+            return View("Create", new GridModel(_repository.All<EducationTraining>().Where(et => et.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _EducationDeleteAjaxEditing(int id, int appId)
+        {
+            var deleted = _repository.All<EducationTraining>().Where<EducationTraining>(et => et.EducationTrainingID == id).FirstOrDefault<EducationTraining>();
+            _repository.Delete<EducationTraining>(deleted);
+
+            return View("Create", new GridModel(_repository.All<EducationTraining>().Where(et => et.ApplicationID == appId)));
         }
     }
 }

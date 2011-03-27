@@ -224,34 +224,32 @@
                         Page »</a>
                 </div>
             </div>
-            <div id="eduTrain">
-
-            
+            <div id="eduTrain">           
                 
-                @(Html.Telerik().Grid(Model.EducationTraining)
-                        .Name("EducationTrainingGrid")
-                        .ToolBar(commands => commands.Insert())
-                        .DataKeys(keys => keys.Add(et => et.EducationTrainingID))
+                @(Html.Telerik().Grid<VerticalFlight.Core.Domain.EducationTraining>()
+                        .Name("Grid")
+                            .DataBinding(dataBinding =>
+                            {
+                                dataBinding.Ajax()
+                                    .Select("_EducationSelectAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Insert("_EducationInsertAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Update("_EducationUpdateAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Delete("_EducationDeleteAjaxEditing", "application", new { appId = Model.ApplicationID });
+                            })
+                            .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.Text))
+                            .DataKeys(keys => keys.Add(et => et.EducationTrainingID))
                         .Columns(columns =>
                             {
                                 columns.Command(commands =>
                                     {
                                         commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
                                         commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
-                                    }).Width(180);
+                                    }).Width(100);
                                 columns.Bound(et => et.Institution).Width(150);
-                                columns.Bound(et => et.AttendedFrom).Width(100);
-                                columns.Bound(et => et.AttendedTo).Width(100);
-                                columns.Bound(et => et.DetailedStudies).Width(250);
+                                columns.Bound(et => et.DetailedStudies).Width(150);
+                                columns.Bound(et => et.AttendedFrom).Width(75);
+                                columns.Bound(et => et.AttendedTo).Width(75);
                             })
-                        .DataBinding(dataBinding =>
-                        {
-                            dataBinding.Server()
-                                .Select("EditingServerSide", "application")
-                                .Insert("EducationInsert", "application")
-                                .Update("EducationUpdate", "application")
-                                .Delete("EducationDelete", "application");
-                        })
                         .Scrollable(scrolling => scrolling.Enabled(false))
                         .Sortable(sorting => sorting.Enabled(false))
                         .Pageable(paging => paging.Enabled(false))
@@ -259,9 +257,7 @@
                         .Groupable(grouping => grouping.Enabled(false))
                         .Footer(false)
                         .Editable(editing => editing.Mode(GridEditMode.InLine))
-                        .ClientEvents(clientEvents => clientEvents.OnEdit("selectEducation"))
                         )
-                    }
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab2Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab2Next">Next
                         Page »</a>

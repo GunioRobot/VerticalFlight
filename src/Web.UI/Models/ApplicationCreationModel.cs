@@ -9,7 +9,9 @@ namespace Web.UI.Models
     public class ApplicationCreationModel
     {
         public int ScholarshipID { get; set; }
-        public virtual int UserID { get; set; }
+        public Guid UserID { get; set; }
+
+        public int ApplicationID { get; set; }
         
         /* Application Information */
         [DisplayName("Applicant Name")]
