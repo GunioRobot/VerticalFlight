@@ -224,10 +224,9 @@
                         Page »</a>
                 </div>
             </div>
-            <div id="eduTrain">           
-                
+            <div id="eduTrain">
                 @(Html.Telerik().Grid<VerticalFlight.Core.Domain.EducationTraining>()
-                        .Name("Grid")
+                        .Name("EduGrid")
                             .DataBinding(dataBinding =>
                             {
                                 dataBinding.Ajax()
@@ -244,11 +243,11 @@
                                     {
                                         commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
                                         commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
-                                    }).Width(100);
-                                columns.Bound(et => et.Institution).Width(150);
-                                columns.Bound(et => et.DetailedStudies).Width(150);
-                                columns.Bound(et => et.AttendedFrom).Width(75);
-                                columns.Bound(et => et.AttendedTo).Width(75);
+                                    });
+                                columns.Bound(et => et.Institution);
+                                columns.Bound(et => et.DetailedStudies);
+                                columns.Bound(et => et.AttendedFrom);
+                                columns.Bound(et => et.AttendedTo);
                             })
                         .Scrollable(scrolling => scrolling.Enabled(false))
                         .Sortable(sorting => sorting.Enabled(false))
@@ -264,18 +263,126 @@
                 </div>
             </div>        
             <div id="airCert">
+                @(Html.Telerik().Grid<VerticalFlight.Core.Domain.AirmanCertificate>()
+                        .Name("AirmanGrid")
+                            .DataBinding(dataBinding =>
+                            {
+                                dataBinding.Ajax()
+                                    .Select("_AirmanSelectAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Insert("_AirmanInsertAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Update("_AirmanUpdateAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Delete("_AirmanDeleteAjaxEditing", "application", new { appId = Model.ApplicationID });
+                            })
+                            .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.Text))
+                            .DataKeys(keys => keys.Add(am => am.AirmanCertificateID))
+                        .Columns(columns =>
+                            {
+                                columns.Command(commands =>
+                                    {
+                                        commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                        commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                    });
+                                columns.Bound(am => am.ClassCategory);
+                                columns.Bound(am => am.Ratings);
+                                columns.Bound(am => am.DateObtained);
+                                columns.Bound(am => am.AircraftType);
+                            })
+                        .Scrollable(scrolling => scrolling.Enabled(false))
+                        .Sortable(sorting => sorting.Enabled(false))
+                        .Pageable(paging => paging.Enabled(false))
+                        .Filterable(filtering => filtering.Enabled(false))
+                        .Groupable(grouping => grouping.Enabled(false))
+                        .Footer(false)
+                        .Editable(editing => editing.Mode(GridEditMode.InLine))
+                        )
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab3Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab3Next">Next
                         Page »</a>
                 </div>
             </div>
             <div id="flightExp">
+                @(Html.Telerik().Grid<VerticalFlight.Core.Domain.FlightExperience>()
+                        .Name("FlightGrid")
+                            .DataBinding(dataBinding =>
+                            {
+                                dataBinding.Ajax()
+                                    .Select("_FlightSelectAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Insert("_FlightInsertAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Update("_FlightUpdateAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Delete("_FlightDeleteAjaxEditing", "application", new { appId = Model.ApplicationID });
+                            })
+                            .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.Text))
+                            .DataKeys(keys => keys.Add(fx => fx.FlightExperienceID))
+                        .Columns(columns =>
+                            {
+                                columns.Command(commands =>
+                                    {
+                                        commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                        commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                    });
+                                columns.Bound(fx => fx.MakeModel);
+                                columns.Bound(fx => fx.Turbine);
+                                columns.Bound(fx => fx.Reciprocating);
+                                columns.Bound(fx => fx.CrossCountry);
+                                columns.Bound(fx => fx.HeliHoursTotalPIC);
+                                columns.Bound(fx => fx.HeliHours6mo);
+                                columns.Bound(fx => fx.HeliHours5Years);
+                                columns.Bound(fx => fx.AirTotalPIC);
+                                columns.Bound(fx => fx.AirHours6mo);
+                                columns.Bound(fx => fx.AirHours5Years);
+                                columns.Bound(fx => fx.Total);                                
+                            })
+                        .Scrollable(scrolling => scrolling.Enabled(false))
+                        .Sortable(sorting => sorting.Enabled(false))
+                        .Pageable(paging => paging.Enabled(false))
+                        .Filterable(filtering => filtering.Enabled(false))
+                        .Groupable(grouping => grouping.Enabled(false))
+                        .Footer(false)
+                        .Editable(editing => editing.Mode(GridEditMode.InLine))
+                        )
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab4Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab4Next">Next
                         Page »</a>
                 </div>
             </div>
             <div id="refs">
+                @(Html.Telerik().Grid<VerticalFlight.Core.Domain.ProfessionalReference>()
+                        .Name("RefGrid")
+                            .DataBinding(dataBinding =>
+                            {
+                                dataBinding.Ajax()
+                                    .Select("_RefSelectAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Insert("_RefInsertAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Update("_RefUpdateAjaxEditing", "application", new { appId = Model.ApplicationID })
+                                    .Delete("_RefDeleteAjaxEditing", "application", new { appId = Model.ApplicationID });
+                            })
+                            .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.Text))
+                    .DataKeys(keys => keys.Add(r => r.ProfessionalReferenceID))
+                        .Columns(columns =>
+                            {
+                                columns.Command(commands =>
+                                    {
+                                        commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                        commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                    });
+                                columns.Bound(r => r.Name);
+                                columns.Bound(r => r.Organization);
+                                columns.Bound(r => r.Address);
+                                columns.Bound(r => r.City);
+                                columns.Bound(r => r.State);
+                                columns.Bound(r => r.Zip);
+                                columns.Bound(r => r.Phone);
+                                columns.Bound(r => r.Relationship);
+                                                                
+                            })
+                        .Scrollable(scrolling => scrolling.Enabled(false))
+                        .Sortable(sorting => sorting.Enabled(false))
+                        .Pageable(paging => paging.Enabled(false))
+                        .Filterable(filtering => filtering.Enabled(false))
+                        .Groupable(grouping => grouping.Enabled(false))
+                        .Footer(false)
+                        .Editable(editing => editing.Mode(GridEditMode.InLine))
+                        )
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab5Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab5Next">Next
                         Page »</a>
@@ -400,28 +507,16 @@
             </div>
            <div id="finPay">
                 <p>
-                    <input type="submit" value="Save Application" />
+                    <input type="submit" value="Finish" />
                 </p>
                 <div style="width: 100%; text-align: center; padding: 10px;">
-                    <a href="#" id="tab8Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab8Next" disabled="disabled">Next Page »</a>
+                    <a href="#" id="tab8Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab8Next"
+                        disabled="disabled">Next Page »</a>
                 </div>
             </div>
         </div>
       </fieldset>
     }
-
-  <div id="payment-info">
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-      <input name="cmd" value="_s-xclick" type="hidden" />
-      <input name="hosted_button_id" value="F2XSASQC3YHG6" type="hidden" />
-      <input name="on0" id="" type="hidden" value="1" />
-      <input name="os0" id="" type="hidden" value="50" /> @* cost should go here *@
-      <input name="currency_code" value="USD" type="hidden"/>
-      <input src="https://www.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" type="image" border="0"/>
-      <img src="https://www.paypal.com/en_US/i/scr/pixel.gif" border="0" height="1" width="1" alt="PayPal - accepted payment types." />
-    </form>
-  </div>
-
 <script>
     $(document).ready(function () {
         $("#appTabs").tabs();
