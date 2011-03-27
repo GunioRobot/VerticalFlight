@@ -2,8 +2,8 @@
     // jquery UI helpers
     $("input:text.date").datepicker({ showOn: "both", buttonImage: "/content/images/calendar.png" });
 //    $("input:text.ssn").mask("999-99-9999");
-    $("input:text.phone").mask("(999)999-9999");
-    $("input:text.zip").mask("99999");
+    $("input:text.phone").mask("9(999)999-9999");
+    //$("input:text.zip").mask("99999");
 
 //    // form appearance
 //    $("input").focus(function () { $(this).addClass("highlight"); });

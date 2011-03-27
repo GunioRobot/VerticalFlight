@@ -49,11 +49,15 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Routing" />
+    <Reference Include="Telerik.Web.Mvc">
+      <HintPath>..\..\..\..\..\Program Files\Telerik\Extensions for ASP.NET MVC Q1 2011\Examples\Telerik.Web.Mvc.Examples\Bin\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ApplicationInformationController.cs" />
+    <Compile Include="Controllers\CultureAwareAction.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
