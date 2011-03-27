@@ -13,7 +13,6 @@ namespace VerticalFlight.Core.Domain
         public virtual string EmploymentDates { get; set; }
         public virtual string ManagerName { get; set; }
         public virtual string ManagerPhone { get; set; }
-        public virtual string CurrentReasonForLeaving { get; set; }
         public virtual string CurrentSalary { get; set; }
         public virtual string CurrentJobDuties { get; set; }
         public virtual string PriorEmployer { get; set; }
