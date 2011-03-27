@@ -52,6 +52,11 @@ textarea { width:885px; height:125px; }
 .apply-link { text-align: right; }
 .apply-link a { color: #666; font-weight: 700; font-size: 14px; }
 
+/* Application Creation
+-------------------------------------------------------*/
+#payment-info { width: 250px; margin: auto; }
+
+
 /*
  * jQuery UI Tabs 1.8.11
  *

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
 using Telerik.Web.Mvc;
 using VerticalFlight.Core.Data;
-using VerticalFlight.Core.Domain;
 using Web.UI.Models;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Web.UI.Controllers
 {
@@ -19,7 +15,6 @@ namespace Web.UI.Controllers
             _repository = repository;
         }
 
-        [Authorize]
         public ActionResult Create(int id)
         {
             ViewData["ajax"] = true;
