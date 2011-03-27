@@ -4,8 +4,10 @@ using StructureMap;
 using StructureMap.Configuration.DSL;
 using VerticalFlight.Core.Data;
 using VerticalFlight.Core.Data.NHibernate;
+using VerticalFlight.Core.Services.Authentication;
 using VerticalFlight.Core.Services.Configuration;
 using VerticalFlight.Core.Services.FileUploader;
+using VerticalFlight.Core.Services.Membership;
 
 namespace VerticalFlight.Core.Dependencies
 {
@@ -25,6 +27,8 @@ namespace VerticalFlight.Core.Dependencies
     {
         public ServiceRegistry()
         {
+            For<IFormsAuthenticationService>().Use<FormsAuthenticationService>();
+            For<IMembershipService>().Use<AccountMembershipService>();
             For<ConfigurationService>().Use<WebConfigurationService>();
             For<FileUploaderService>().Use<HttpFileUploaderService>();
         }
