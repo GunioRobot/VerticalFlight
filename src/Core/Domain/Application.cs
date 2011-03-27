@@ -20,5 +20,7 @@ namespace VerticalFlight.Core.Domain
 
         public virtual OtherInformation OtherInformation { get; set; }
         public virtual FinancialInformation FinancialInformation { get; set; }
+        public virtual PaymentHistory Payment { get; set; }
+
     }
 } 
