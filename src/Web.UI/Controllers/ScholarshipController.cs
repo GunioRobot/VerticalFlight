@@ -21,9 +21,10 @@ namespace Web.UI.Controllers
         // GET: /Scholarship/
         public ActionResult Apply()
         {
-            ViewBag.Message = "Select a scholarship from below to start the application process.";
+            ViewBag.Message = "Select a scholarship from below list to start the application process.";
             ScholarshipInfo scholarshipInfo = new ScholarshipInfo();
-            return View();
+            
+            return View(_repository.All<ScholarshipInfo>().ToList());
         }
 
     }
