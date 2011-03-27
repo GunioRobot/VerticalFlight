@@ -1,6 +1,12 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
+using Telerik.Web.Mvc;
 using VerticalFlight.Core.Data;
+using VerticalFlight.Core.Domain;
 using Web.UI.Models;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Web.UI.Controllers
 {
@@ -19,54 +25,52 @@ namespace Web.UI.Controllers
             ViewData["ajax"] = true;
             return View(new ApplicationCreationModel { ScholarshipID = id });
         }
-                
-        //[GridAction]
-        //public ActionResult _SelectAjaxEditing()
-        //{
-        //    return View(new GridModel(_repository.All<EducationTraining>()));
-        //}
 
-        //[AcceptVerbs(HttpVerbs.Post)]
-        //[CultureAwareAction]
-        //[GridAction]
-        //public ActionResult _SaveAjaxEditing(int id)
-        //{
-        //    EducationTraining education = _repository.(et => et.EducationTrainingID == id);
+        public ActionResult EditingServerSide()
+        {
+            return View("Create");
+        }
 
-        //    TryUpdateModel(product);
-        //    SessionProductRepository.Update(product);
-        //    return View(new GridModel(SessionProductRepository.All()));
-        //}
-        //[AcceptVerbs(HttpVerbs.Post)]
-        //[CultureAwareAction]
-        //[GridAction]
-        //public ActionResult _InsertAjaxEditing()
-        //{
-        //    //Create a new instance of the EditableProduct class.
-        //    EditableProduct product = new EditableProduct();
-        //    //Perform model binding (fill the product properties and validate it).
-        //    if (TryUpdateModel(product))
-        //    {
-        //        //The model is valid - insert the product.
-        //        SessionProductRepository.Insert(product);
-        //    }
-        //    //Rebind the grid
-        //    return View(new GridModel(SessionProductRepository.All()));
-        //}
-        //[AcceptVerbs(HttpVerbs.Post)]
-        //[GridAction]
-        //public ActionResult _DeleteAjaxEditing(int id)
-        //{
-        //    //Find a customer with ProductID equal to the id action parameter
-        //    EditableProduct product = SessionProductRepository.One(p => p.ProductID == id);
-        //    if (product != null)
-        //    {
-        //        //Delete the record
-        //        SessionProductRepository.Delete(product);
-        //    }
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult EducationInsert(int id)
+        {
+            //EducationTraining education = _repository.(et => et.EducationTrainingID == educationTrainingId);
 
-        //    //Rebind the grid
-        //    return View(new GridModel(SessionProductRepository.All()));
-        //}
+            //TryUpdateModel(product);
+            //SessionProductRepository.Update(product);
+            //return View(new GridModel(SessionProductRepository.All()));
+            throw new NotImplementedException("Getting there...");
+        }
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult EducationUpdate(int id)
+        {
+            ////Create a new instance of the EditableProduct class.
+            //EditableProduct product = new EditableProduct();
+            ////Perform model binding (fill the product properties and validate it).
+            //if (TryUpdateModel(product))
+            //{
+            //    //The model is valid - insert the product.
+            //    SessionProductRepository.Insert(product);
+            //}
+            ////Rebind the grid
+            //return View(new GridModel(SessionProductRepository.All()));
+            throw new NotImplementedException("Getting there...");
+        }
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult EducationDelete(int id)
+        {
+            ////Find a customer with ProductID equal to the id action parameter
+            //EditableProduct product = SessionProductRepository.One(p => p.ProductID == id);
+            //if (product != null)
+            //{
+            //    //Delete the record
+            //    SessionProductRepository.Delete(product);
+            //}
+
+            ////Rebind the grid
+            //return View(new GridModel(SessionProductRepository.All()));
+            throw new NotImplementedException("Getting there...");
+        }
     }
 }

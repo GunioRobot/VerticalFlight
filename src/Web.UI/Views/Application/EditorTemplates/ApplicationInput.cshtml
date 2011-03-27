@@ -2,7 +2,7 @@
 @using (Html.BeginForm())
 {
     <fieldset>
-        <div id="tabs">
+        <div id="appTabs">
             <ul>
                 <li><a href="#applInfo">Applicant</a></li>
                 <li><a href="#empInfo">Employment</a></li>
@@ -222,9 +222,12 @@
                 <div style="width: 100%; text-align: center; padding: 10px; clear: both;">                    
                     <a href="#" id="tab1Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab1Next">Next
                         Page »</a>
-                </div>e
+                </div>
             </div>
             <div id="eduTrain">
+
+            
+                
                 @(Html.Telerik().Grid(Model.EducationTraining)
                         .Name("EducationTrainingGrid")
                         .ToolBar(commands => commands.Insert())
@@ -236,18 +239,18 @@
                                         commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
                                         commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
                                     }).Width(180);
-                                columns.Bound(et => et.Institution).Width(200);
+                                columns.Bound(et => et.Institution).Width(150);
                                 columns.Bound(et => et.AttendedFrom).Width(100);
                                 columns.Bound(et => et.AttendedTo).Width(100);
                                 columns.Bound(et => et.DetailedStudies).Width(250);
                             })
                         .DataBinding(dataBinding =>
                         {
-                            dataBinding.Ajax()
-                                .Select("_SelectAjaxEditing", "application")
-                                .Insert("_InsertAjaxEditing", "application")
-                                .Update("_SaveAjaxEditing", "application")
-                                .Delete("_DeleteAjaxEditing", "application");
+                            dataBinding.Server()
+                                .Select("EditingServerSide", "application")
+                                .Insert("EducationInsert", "application")
+                                .Update("EducationUpdate", "application")
+                                .Delete("EducationDelete", "application");
                         })
                         .Scrollable(scrolling => scrolling.Enabled(false))
                         .Sortable(sorting => sorting.Enabled(false))
@@ -255,7 +258,10 @@
                         .Filterable(filtering => filtering.Enabled(false))
                         .Groupable(grouping => grouping.Enabled(false))
                         .Footer(false)
+                        .Editable(editing => editing.Mode(GridEditMode.InLine))
+                        .ClientEvents(clientEvents => clientEvents.OnEdit("selectEducation"))
                         )
+                    }
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab2Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab2Next">Next
                         Page »</a>
@@ -410,31 +416,35 @@
     }
 <script>
     $(document).ready(function () {
-        $("#tabs").tabs();
+        $("#appTabs").tabs();
 
-        $("#tab0Next").click(function () { $("#tabs").tabs('select', 1); return false; });
+        $("#tab0Next").click(function () { $("#appTabs").tabs('select', 1); return false; });
 
-        $("#tab1Prev").click(function () { $("#tabs").tabs('select', 0); return false; });
-        $("#tab1Next").click(function () { $("#tabs").tabs('select', 2); return false; });
+        $("#tab1Prev").click(function () { $("#appTabs").tabs('select', 0); return false; });
+        $("#tab1Next").click(function () { $("#appTabs").tabs('select', 2); return false; });
 
-        $("#tab2Prev").click(function () { $("#tabs").tabs('select', 1); return false; });
-        $("#tab2Next").click(function () { $("#tabs").tabs('select', 3); return false; });
+        $("#tab2Prev").click(function () { $("#appTabs").tabs('select', 1); return false; });
+        $("#tab2Next").click(function () { $("#appTabs").tabs('select', 3); return false; });
 
-        $("#tab3Prev").click(function () { $("#tabs").tabs('select', 2); return false; });
-        $("#tab3Next").click(function () { $("#tabs").tabs('select', 4); return false; });
+        $("#tab3Prev").click(function () { $("#appTabs").tabs('select', 2); return false; });
+        $("#tab3Next").click(function () { $("#appTabs").tabs('select', 4); return false; });
 
-        $("#tab4Prev").click(function () { $("#tabs").tabs('select', 3); return false; });
-        $("#tab4Next").click(function () { $("#tabs").tabs('select', 5); return false; });
+        $("#tab4Prev").click(function () { $("#appTabs").tabs('select', 3); return false; });
+        $("#tab4Next").click(function () { $("#appTabs").tabs('select', 5); return false; });
 
-        $("#tab5Prev").click(function () { $("#tabs").tabs('select', 4); return false; });
-        $("#tab5Next").click(function () { $("#tabs").tabs('select', 6); return false; });
+        $("#tab5Prev").click(function () { $("#appTabs").tabs('select', 4); return false; });
+        $("#tab5Next").click(function () { $("#appTabs").tabs('select', 6); return false; });
 
-        $("#tab6Prev").click(function () { $("#tabs").tabs('select', 5); return false; });
-        $("#tab6Next").click(function () { $("#tabs").tabs('select', 7); return false; });
+        $("#tab6Prev").click(function () { $("#appTabs").tabs('select', 5); return false; });
+        $("#tab6Next").click(function () { $("#appTabs").tabs('select', 7); return false; });
 
-        $("#tab7Prev").click(function () { $("#tabs").tabs('select', 6); return false; });
-        $("#tab7Next").click(function () { $("#tabs").tabs('select', 8); return false; });
+        $("#tab7Prev").click(function () { $("#appTabs").tabs('select', 6); return false; });
+        $("#tab7Next").click(function () { $("#appTabs").tabs('select', 8); return false; });
 
-        $("#tab8Prev").click(function () { $("#tabs").tabs('select', 7); return false; });
+        $("#tab8Prev").click(function () { $("#appTabs").tabs('select', 7); return false; });
     });
+
+    function selectEducation() {
+        $("#appTabs").tabs('select', 2); 
+    }
 </script>
