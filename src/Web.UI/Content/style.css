@@ -22,6 +22,7 @@ label { margin: 0px 4px; vertical-align: text-bottom; }
 input { margin: 4px; }
 input[type="text"], input[type="password"] { width: 200px; }
 input[type="submit"] { padding: 4px; }
+textarea { width:885px; height:125px; }
 
 .editor-field { margin-bottom: 8px; }
 /* Validation Helper Styles

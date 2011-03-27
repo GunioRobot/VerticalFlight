@@ -2,7 +2,7 @@
 
 namespace VerticalFlight.Core.Domain
 {
-    class FinancialInformation
+    public class FinancialInformation
     {
         public virtual int FinancialInformationID { get; set; }
         public virtual int ApplicationID { get; set; }
