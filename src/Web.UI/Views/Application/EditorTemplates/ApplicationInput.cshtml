@@ -400,16 +400,28 @@
             </div>
            <div id="finPay">
                 <p>
-                    <input type="submit" value="Finish" />
+                    <input type="submit" value="Save Application" />
                 </p>
                 <div style="width: 100%; text-align: center; padding: 10px;">
-                    <a href="#" id="tab8Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab8Next"
-                        disabled="disabled">Next Page »</a>
+                    <a href="#" id="tab8Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab8Next" disabled="disabled">Next Page »</a>
                 </div>
             </div>
         </div>
       </fieldset>
     }
+
+  <div id="payment-info">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input name="cmd" value="_s-xclick" type="hidden" />
+      <input name="hosted_button_id" value="F2XSASQC3YHG6" type="hidden" />
+      <input name="on0" id="" type="hidden" value="1" />
+      <input name="os0" id="" type="hidden" value="50" /> @* cost should go here *@
+      <input name="currency_code" value="USD" type="hidden"/>
+      <input src="https://www.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" type="image" border="0"/>
+      <img src="https://www.paypal.com/en_US/i/scr/pixel.gif" border="0" height="1" width="1" alt="PayPal - accepted payment types." />
+    </form>
+  </div>
+
 <script>
     $(document).ready(function () {
         $("#appTabs").tabs();

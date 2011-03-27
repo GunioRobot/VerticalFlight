@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
 using Telerik.Web.Mvc;
 using VerticalFlight.Core.Data;
-using VerticalFlight.Core.Domain;
 using Web.UI.Models;
-using System.Collections;
-using System.Collections.Generic;
 using VerticalFlight.Core.Services.Membership;
 using AutoMapper;
 
@@ -23,7 +19,6 @@ namespace Web.UI.Controllers
             _membershipService = membershipService;
         }
 
-        [Authorize]
         public ActionResult Create(int id)
         {
             var application = new Application { ScholarshipID = id, UserID = _membershipService.GetUserIdFor(User.Identity.Name), ApplicationDate = DateTime.Now };
