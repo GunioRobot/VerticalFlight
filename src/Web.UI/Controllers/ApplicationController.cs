@@ -13,10 +13,11 @@ namespace Web.UI.Controllers
             _repository = repository;
         }
 
-        public ActionResult Create()
+        [Authorize]
+        public ActionResult Create(int id)
         {
             ViewData["ajax"] = true;
-            return View(new ApplicationCreationModel());
+            return View(new ApplicationCreationModel { ScholarshipID = id });
         }
                 
         //[GridAction]

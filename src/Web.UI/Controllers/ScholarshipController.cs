@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using VerticalFlight.Core.Data;
 using VerticalFlight.Core.Domain;
@@ -17,15 +14,9 @@ namespace Web.UI.Controllers
             _repository = repository;
         }
 
-        //
-        // GET: /Scholarship/
-        public ActionResult Apply()
+        public ActionResult Index()
         {
-            ViewBag.Message = "Select a scholarship from below list to start the application process.";
-            ScholarshipInfo scholarshipInfo = new ScholarshipInfo();
-            
             return View(_repository.All<ScholarshipInfo>().ToList());
         }
-
     }
 }

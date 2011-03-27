@@ -224,8 +224,7 @@
                         Page »</a>
                 </div>e
             </div>
-            
-@*            <div id="eduTrain">
+            <div id="eduTrain">
                 @(Html.Telerik().Grid(Model.EducationTraining)
                         .Name("EducationTrainingGrid")
                         .ToolBar(commands => commands.Insert())
@@ -261,7 +260,7 @@
                     <a href="#" id="tab2Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab2Next">Next
                         Page »</a>
                 </div>
-*@            </div>
+            </div>        
             <div id="airCert">
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab3Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab3Next">Next
@@ -407,8 +406,8 @@
                 </div>
             </div>
         </div>
-    </fieldset>
-}
+      </fieldset>
+    }
 <script>
     $(document).ready(function () {
         $("#tabs").tabs();

@@ -44,6 +44,14 @@ textarea { width:885px; height:125px; }
 -------------------------------------------------------*/
 #register-form { width: 250px; margin: 50px auto; }
 
+/* Scholarship Listing Page
+-------------------------------------------------------*/
+.scholarship { margin: 8px; padding: 8px; border: solid 1px #CCC; }
+.scholarship h3 { font-size: 16px; padding: 4px;  }
+.description { font-style: italic; }
+.apply-link { text-align: right; }
+.apply-link a { color: #666; font-weight: 700; font-size: 14px; }
+
 /*
  * jQuery UI Tabs 1.8.11
  *
