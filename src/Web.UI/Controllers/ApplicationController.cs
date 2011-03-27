@@ -5,6 +5,8 @@ using Telerik.Web.Mvc;
 using VerticalFlight.Core.Data;
 using VerticalFlight.Core.Domain;
 using Web.UI.Models;
+using System.Collections;
+using System.Collections.Generic;
 using VerticalFlight.Core.Services.Membership;
 using AutoMapper;
 
@@ -58,7 +60,7 @@ namespace Web.UI.Controllers
         [GridAction]
         public ActionResult _EducationInsertAjaxEditing(int appId)
         {
-            var inserted = new EducationTraining();
+            var inserted = new EducationTraining { ApplicationID = appId };
 
             TryUpdateModel(inserted);
 
@@ -87,6 +89,139 @@ namespace Web.UI.Controllers
             _repository.Delete(deleted);
 
             return View("Create", new GridModel(_repository.All<EducationTraining>().Where(et => et.Application.ApplicationID == appId)));
+        }
+
+
+
+
+        [GridAction]
+        public ActionResult _AirmanSelectAjaxEditing(int appId)
+        {
+            return View("Create", new GridModel(_repository.All<EducationTraining>().Where(et => et.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _AirmanInsertAjaxEditing(int appId)
+        {
+            var inserted = new AirmanCertificate { ApplicationID = appId };
+
+            TryUpdateModel(inserted);
+
+            _repository.Save<AirmanCertificate>(inserted);
+
+            return View("Create", new GridModel(_repository.All<AirmanCertificate>().Where(ac => ac.ApplicationID == appId)));
+        }
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _AirmanUpdateAjaxEditing(int id, int appId)
+        {
+            var updated = _repository.All<AirmanCertificate>().Where<AirmanCertificate>(ac => ac.AirmanCertificateID == id).FirstOrDefault<AirmanCertificate>();
+
+            TryUpdateModel(updated);
+
+            _repository.Save<AirmanCertificate>(updated);
+
+            return View("Create", new GridModel(_repository.All<AirmanCertificate>().Where(ac => ac.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _AirmanDeleteAjaxEditing(int id, int appId)
+        {
+            var deleted = _repository.All<AirmanCertificate>().Where<AirmanCertificate>(ac => ac.AirmanCertificateID == id).FirstOrDefault<AirmanCertificate>();
+            _repository.Delete<AirmanCertificate>(deleted);
+
+            return View("Create", new GridModel(_repository.All<AirmanCertificate>().Where(et => et.ApplicationID == appId)));
+        }
+
+
+
+
+        [GridAction]
+        public ActionResult _FlightSelectAjaxEditing(int appId)
+        {
+            return View("Create", new GridModel(_repository.All<FlightExperience>().Where(et => et.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _FlightInsertAjaxEditing(int appId)
+        {
+            var inserted = new FlightExperience { ApplicationID = appId };
+
+            TryUpdateModel(inserted);
+
+            _repository.Save<FlightExperience>(inserted);
+
+            return View("Create", new GridModel(_repository.All<FlightExperience>().Where(fx => fx.ApplicationID == appId)));
+        }
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _FlightUpdateAjaxEditing(int id, int appId)
+        {
+            var updated = _repository.All<FlightExperience>().Where<FlightExperience>(fx => fx.FlightExperienceID == id).FirstOrDefault<FlightExperience>();
+
+            TryUpdateModel(updated);
+
+            _repository.Save<FlightExperience>(updated);
+
+            return View("Create", new GridModel(_repository.All<FlightExperience>().Where(fx => fx.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _FlightDeleteAjaxEditing(int id, int appId)
+        {
+            var deleted = _repository.All<FlightExperience>().Where<FlightExperience>(fx => fx.FlightExperienceID == id).FirstOrDefault<FlightExperience>();
+            _repository.Delete<FlightExperience>(deleted);
+
+            return View("Create", new GridModel(_repository.All<FlightExperience>().Where(fx => fx.ApplicationID == appId)));
+        }
+
+
+
+
+
+        [GridAction]
+        public ActionResult _RefSelectAjaxEditing(int appId)
+        {
+            return View("Create", new GridModel(_repository.All<ProfessionalReference>().Where(r => r.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _RefInsertAjaxEditing(int appId)
+        {
+            var inserted = new ProfessionalReference { ApplicationID = appId };
+
+            TryUpdateModel(inserted);
+
+            _repository.Save<ProfessionalReference>(inserted);
+
+            return View("Create", new GridModel(_repository.All<ProfessionalReference>().Where(r => r.ApplicationID == appId)));
+        }
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _RefUpdateAjaxEditing(int id, int appId)
+        {
+            var updated = _repository.All<ProfessionalReference>().Where<ProfessionalReference>(r => r.ProfessionalReferenceID == id).FirstOrDefault<ProfessionalReference>();
+
+            TryUpdateModel(updated);
+
+            _repository.Save<ProfessionalReference>(updated);
+
+            return View("Create", new GridModel(_repository.All<ProfessionalReference>().Where(r => r.ApplicationID == appId)));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        [GridAction]
+        public ActionResult _RefDeleteAjaxEditing(int id, int appId)
+        {
+            var deleted = _repository.All<ProfessionalReference>().Where<ProfessionalReference>(r => r.ProfessionalReferenceID == id).FirstOrDefault<ProfessionalReference>();
+            _repository.Delete<ProfessionalReference>(deleted);
+
+            return View("Create", new GridModel(_repository.All<ProfessionalReference>().Where(fx => fx.ApplicationID == appId)));
         }
     }
 }
