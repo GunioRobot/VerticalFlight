@@ -48,7 +48,7 @@ namespace Web.UI.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Scholarship");
                     }
                 }
                 else

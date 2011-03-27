@@ -1,0 +1,31 @@
+﻿@Model VerticalFlight.Core.Domain.ScholarshipInfo
+
+@{
+    ViewBag.Title = "Apply";
+}
+
+<h2>Apply</h2>
+
+<fieldset>
+    <legend>ScholarshipInfo</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">DocPath</div>
+    <div class="display-field">@Model.DocPath</div>
+
+    <div class="display-label">OpenDate</div>
+    <div class="display-field">@String.Format("{0:g}", Model.OpenDate)</div>
+
+    <div class="display-label">CloseDate</div>
+    <div class="display-field">@String.Format("{0:g}", Model.CloseDate)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ScholarshipInfoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
