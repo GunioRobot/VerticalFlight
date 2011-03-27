@@ -56,48 +56,92 @@ namespace Web.UI.Models
         [DisplayName("Email")]
         public string EmploymentInfoEmail { get; set; }
         
-        [DisplayName("Title")]
+        [DisplayName("Position Title")]
         public string EmploymentInfoCurrentPositionTitle { get; set; }
-        
-        
-        [DisplayName("Applicant Name")]
+                
+        [DisplayName("Dates Employed")]
         public string EmploymentInfoEmploymentDates { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Manager Name")]
         public string EmploymentInfoManagerName { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Manager Phone")]
         public string EmploymentInfoManagerPhone { get; set; }
         
-        [DisplayName("Applicant Name")]
-        public string EmploymentInfoCurrentReasonForLeaving { get; set; }
-        
-        [DisplayName("Applicant Name")]
+        [DisplayName("Salary")]
         public string EmploymentInfoCurrentSalary { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Job Duties")]
         public string EmploymentInfoCurrentJobDuties { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Prior Employer")]
         public string EmploymentInfoPriorEmployer { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Salary")]
         public string EmploymentInfoPriorSalary { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Job Duties")]
         public string EmploymentInfoPriorJobDuties { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Position Title")]
         public string EmploymentInfoPriorPositionTitle { get; set; }
         
-        [DisplayName("Applicant Name")]
+        [DisplayName("Reason For Leaving")]
         public string EmploymentInfoPriorReasonForLeaving { get; set; }
 
-        [DisplayName("Applicant Name")]
+        [DisplayName("Dates Employed")]
         public string EmploymentInfoPriorEmploymentDates { get; set; }
 
+        public IList<EducationTraining> EducationTraining { get; set; }
+        public IList<AirmanCertificate> AirmanCertificates { get; set; }
         public IList<FlightExperience> FlightExperience { get; set; }
+        public IList<ProfessionalReference> ProfessionalReferences { get; set; }
+
+        [DisplayName("Honors/awards/scholarships you have received")]
+        public string OtherInformationAccolades { get; set; }
+
+        [DisplayName("Organization affiliations")]
+        public string OtherInformationAffiliations { get; set; }
+        
+        [DisplayName("Activities/Hobbies")]
+        public string OtherInformationActivitiesHobbies { get; set; }
+                
+        [DisplayName("Involvement in aviation-related activities")]
+        public string OtherInformationAviationInvolvement { get; set; }
+
+        [DisplayName("Aviation achievements or contributions you have made to the industry")]
+        public string OtherInformationAchievements { get; set; }
+
+        [DisplayName("What made you interested in becoming a helicopter pilot?")]
+        public string OtherInformationWhyInterested { get; set; }
+
+        [DisplayName("What is your flying experience? Tell us your story.")]
+        public string OtherInformationFlyingExperience { get; set; }
+
+        [DisplayName("How do you intend to use this scholarship to further your aviation goals? Please include what your short term & long term goals are and why you consider this scholarship to be beneficial to those goals. Please be in-depth with your answer.")]
+        public string OtherInformationScholarshipIntent { get; set; }
 
 
+
+        [DisplayName("Why do you need this financial assistance? (Please be specific)")]
+        public string FinancialInformationNeed { get; set; }
+
+        [DisplayName("Do you have access to discounted or free use of helicopter instruction and/or flight time? If yes, please explain.")]
+        public string FinancialInformationDiscountAccess { get; set; }
+
+        [DisplayName("Total Annual Household Income: (If you are head of Household please list family structure)")]
+        public string FinancialInformationAnnualIncome { get; set; }
+
+        [DisplayName("Sources of Income: (Please list source and associated annual amounts)")]
+        public string FinancialInformationIncomeSource { get; set; }
+
+        [DisplayName("List all assets and estimated value:")]
+        public string FinancialInformationAssetsAndValue { get; set; }
+
+        [DisplayName("List all liabilities and amount of each:")]
+        public string FinancialInformationLiabilities { get; set; }
+
+        [DisplayName("Are you listed as a dependent on anyone’s income tax return? If yes, please explain.")]
+        public string FinancialInformationDependentDetails { get; set; }
     }
 }
