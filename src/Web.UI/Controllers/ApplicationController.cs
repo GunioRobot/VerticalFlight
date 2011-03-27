@@ -1,10 +1,6 @@
 ﻿using System.Web.Mvc;
 using VerticalFlight.Core.Data;
 using Web.UI.Models;
-using Telerik.Web.Mvc;
-using Telerik.Web.Mvc.UI;
-using VerticalFlight.Core.Domain;
-using System.Linq;
 
 namespace Web.UI.Controllers
 {

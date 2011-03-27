@@ -1,0 +1,75 @@
+﻿@model Web.UI.Models.AirmanCertificateCreationModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>AirmanCertificate</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicationID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicationID)
+            @Html.ValidationMessageFor(model => model.ApplicationID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClassCategory)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClassCategory)
+            @Html.ValidationMessageFor(model => model.ClassCategory)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ratings)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ratings)
+            @Html.ValidationMessageFor(model => model.Ratings)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateObtained)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateObtained)
+            @Html.ValidationMessageFor(model => model.DateObtained)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AircraftType)
+        </div>
+        
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AircraftType)
+            @Html.ValidationMessageFor(model => model.AircraftType)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CertificateFile)
+        </div>
+        
+        <div class="editor-field">
+            <input type="file" name="CertificateFile" id="CertificateFile" value="@Model.CertificateFile" />
+            @Html.ValidationMessageFor(model => model.CertificateFile)
+        </div>        
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

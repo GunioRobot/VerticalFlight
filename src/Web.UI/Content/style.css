@@ -14,7 +14,9 @@ fieldset legend { margin: 0px 12px; padding: 4px; }
 #menu li a { display: inline-block; color: #FFF; font-weight: 700; text-decoration: none; padding: 8px 10px; }
 #menu li a:hover { color: #577A0E; background-image: url(images/t_menu_hover.png); }
 #content { padding: 12px; }
-#footer { height: 30px; background-image: url(images/footer.png); text-align: center; color: #484747; font-size: 10px; }
+#footer {  height: 30px; background-image: url(images/footer.png); text-align: center; color: #999; font-size: 10px; }
+#footer a { text-decoration: none; color: #999; }
+#footer a:hover { text-decoration: underline; }
 
 /* Form Styles
 -------------------------------------------------------*/
@@ -25,6 +27,7 @@ input[type="submit"] { padding: 4px; }
 textarea { width:885px; height:125px; }
 
 .editor-field { margin-bottom: 8px; }
+
 /* Validation Helper Styles
 -----------------------------------------------------------*/
 .field-validation-error { color: #ff0000; margin: 4px; }

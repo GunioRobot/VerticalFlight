@@ -4,8 +4,8 @@ using StructureMap;
 using StructureMap.Configuration.DSL;
 using VerticalFlight.Core.Data;
 using VerticalFlight.Core.Data.NHibernate;
-using VerticalFlight.Core.Services;
 using VerticalFlight.Core.Services.Configuration;
+using VerticalFlight.Core.Services.FileUploader;
 
 namespace VerticalFlight.Core.Dependencies
 {
@@ -26,6 +26,7 @@ namespace VerticalFlight.Core.Dependencies
         public ServiceRegistry()
         {
             For<ConfigurationService>().Use<WebConfigurationService>();
+            For<FileUploaderService>().Use<HttpFileUploaderService>();
         }
     }
 
