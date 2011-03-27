@@ -219,12 +219,43 @@
                         </div>
                     </div>
                 </div>
-                <div style="width: 100%; text-align: center; padding: 10px; clear: both;">
+                <div style="width: 100%; text-align: center; padding: 10px; clear: both;">                    
                     <a href="#" id="tab1Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab1Next">Next
                         Page »</a>
-                </div>
+                </div>e
             </div>
             <div id="eduTrain">
+                @(Html.Telerik().Grid(Model.EducationTraining)
+                        .Name("EducationTrainingGrid")
+                        .ToolBar(commands => commands.Insert())
+                        .DataKeys(keys => keys.Add(et => et.EducationTrainingID))
+                        .Columns(columns =>
+                            {
+                                columns.Command(commands =>
+                                    {
+                                        commands.Edit().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                        commands.Delete().ButtonType(Telerik.Web.Mvc.UI.GridButtonType.Text);
+                                    }).Width(180);
+                                columns.Bound(et => et.Institution).Width(200);
+                                columns.Bound(et => et.AttendedFrom).Width(100);
+                                columns.Bound(et => et.AttendedTo).Width(100);
+                                columns.Bound(et => et.DetailedStudies).Width(250);
+                            })
+                        .DataBinding(dataBinding =>
+                        {
+                            dataBinding.Ajax()
+                                .Select("_SelectAjaxEditing", "application")
+                                .Insert("_InsertAjaxEditing", "application")
+                                .Update("_SaveAjaxEditing", "application")
+                                .Delete("_DeleteAjaxEditing", "application");
+                        })
+                        .Scrollable(scrolling => scrolling.Enabled(false))
+                        .Sortable(sorting => sorting.Enabled(false))
+                        .Pageable(paging => paging.Enabled(false))
+                        .Filterable(filtering => filtering.Enabled(false))
+                        .Groupable(grouping => grouping.Enabled(false))
+                        .Footer(false)
+                        )
                 <div style="width: 100%; text-align: center; padding: 10px;">
                     <a href="#" id="tab2Prev">« Prev Page</a> &nbsp;&nbsp; <a href="#" id="tab2Next">Next
                         Page »</a>
