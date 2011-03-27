@@ -8,7 +8,7 @@
 {
   <div id="login-form">
     <h2>Log On</h2>
-    <p>Please enter your username and password. @Html.ActionLink("Register", "Register") if you don't have an account.</p>
+    <p>Please enter your username and password. @Html.ActionLink("Register", "Register", new { returnUrl = Request["returnUrl"] }) if you don't have an account.</p>
     <fieldset>
       <legend>Account Information</legend>
       <div class="editor-label">
