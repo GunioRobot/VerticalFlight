@@ -13,7 +13,7 @@ namespace Integration
         public void SetUp()
         {
             _configurationService = new FakeConfigurationService();
-            _configurationService.ConnectionString = @"Data Source=tcp:sql2k802.discountasp.net;Initial Catalog=SQL2008_809759_ddvff;User ID=SQL2008_809759_ddvff_user;Password=jesika;";
+            _configurationService.ConnectionString = @"Data Source=tcp:[database-server];Initial Catalog=[database];User ID=[database user];Password=[database password];";
             _dbConfiguration = new NHibernateConfiguration(_configurationService);
             _sessionFactory = _dbConfiguration.CreateSessionFactory();
             _repository = new NHibernateRepository(_sessionFactory.OpenSession());
